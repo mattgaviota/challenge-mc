@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\ResponseHelper;
 
+
 class VehicleController extends Controller
 {
     /**
      * Return a list of results from NHTSA.
-     * @param year number
-     * @param manufacturer string
-     * @param model string
-     *
+     * @param $request Request
+     * @method GET|POST
      * @return json
      *{
      *  Count: <NUMBER OF RESULTS>,
@@ -34,28 +33,10 @@ class VehicleController extends Controller
      */
     public function results(Request $request)
     {
-        $year = $request->year;
+        $year = $request->modelYear;
         $manufacturer = $request->manufacturer;
         $model = $request->model;
 
-        $client = new \GuzzleHttp\Client();
-        try {
-            $body = $client->request(
-                'GET',
-                sprintf(
-                    'https://one.nhtsa.gov/webapi/api/SafetyRatings/modelyear/%d/make/%s/model/%s?format=json',
-                    $year,
-                    $manufacturer,
-                    $model
-                )
-            )->getBody();
-            $response = ResponseHelper::formatter(json_decode($body));
-            return $response;
-        } catch (RequestException $e) {
-            return response()->json(
-                ['Count' => 0, 'Results' => []],
-                404
-            );
-        }
+        return ResponseHelper::client($year, $manufacturer, $model);
     }
 }

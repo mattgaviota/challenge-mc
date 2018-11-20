@@ -17,4 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('vehicles/{year}/{manufacturer}/{model}', '\App\Http\Controllers\API\VehicleController@results');
+Route::get('vehicles/{modelYear}/{manufacturer}/{model}', '\App\Http\Controllers\API\VehicleController@results');
+Route::post('vehicles', '\App\Http\Controllers\API\VehicleController@results');

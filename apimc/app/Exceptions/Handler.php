@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -47,11 +48,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof NotFoundHttpException){
+        if ($exception instanceof NotFoundHttpException or $exception instanceof HttpException){
             return response()->json([
                 'Count' => 0,
                 'Results' => []
-            ], 404);
+            ], 200);
         }
         return parent::render($request, $exception);
     }
