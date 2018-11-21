@@ -36,7 +36,8 @@ class VehicleController extends Controller
         $year = $request->modelYear;
         $manufacturer = $request->manufacturer;
         $model = $request->model;
+        $withRating = $request->withRating;
 
-        return ResponseHelper::client($year, $manufacturer, $model);
+        return ResponseHelper::client($year, $manufacturer, $model, $withRating);
     }
 }
