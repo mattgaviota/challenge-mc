@@ -66,7 +66,7 @@ Run the development server
 
 and then you can start trying the endpoints(http://localhost:8080/vehicles).
 
-## testing
+## Testing
 
 You can try the API after follow the step **A)** or **B)** using this endpoints
 
