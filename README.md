@@ -13,16 +13,17 @@ you need to use are provided in this document.
 ## Requisites
 
 In order to try this application you need install [docker ce](https://docs.docker.com/install/overview/)
-and [docker compose](https://docs.docker.com/compose/overview/)
-configured in the `.env file`.
+and [docker compose](https://docs.docker.com/compose/overview/).
 The following instructions are for a GNU/Linux system but can be easily
 followed in another system.
+It also assume you have [git](https://git-scm.com/) installed but it works
+exactly the same if you download the zip file with the code.
 
-## Install the Application
+## A) Install the Application Using docker
 
-Clone the repository
+Clone the repository(also works downloading the zip file)
 
-    git clone git@github.com:mattgaviota/challenge-mc.git
+    git clone https://github.com/mattgaviota/challenge-mc.git
 
 Enter to the directory of the app
 
@@ -36,11 +37,44 @@ After installing this, you may need to configure some permissions. Directories
 within the  `storage` and the `bootstrap/cache` directories should be writable
 by your web server or Laravel will not run.
 
-## Using docker
-
-You can try the application using docker. The steps are the same as above except
-instead of using `composer start` you can use
+Now you simply run
 
     docker-compose up -d
 
-and then testing the endpoints.
+and then you can start trying the endpoints(http://localhost:8080/vehicles).
+
+## B) Using composer
+
+Alternative, if you don't want to use Docker, you can use *PHP7.2* and
+[Composer](https://getcomposer.org/).
+
+Clone the repository(also works downloading the zip file)
+
+    git clone https://github.com/mattgaviota/challenge-mc.git
+
+Enter the repository folder and then to the app folder
+
+    cd challenge-m/apimc
+
+Install the dependencies
+
+    composer install
+
+Run the development server
+
+    composer start
+
+and then you can start trying the endpoints(http://localhost:8080/vehicles).
+
+## testing
+
+You can try the API after follow the step **A)** or **B)** using this endpoints
+
+    GET http://localhost:8080/vehicles
+    POST http://localhost:8080/vehicles
+
+Also there are automatized tests that you can run with **composer**
+
+    cd challenge-m/apimc
+  
+    composer test
