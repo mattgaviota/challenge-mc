@@ -4,11 +4,10 @@
 This is a short coding assignment, in which you will be asked to
 implement an API in PHP that calls a "backend API" to get information
 about crash test ratings for vehicles.
-The underlying API that is to be used here is the [NHTSA NCAP 5 Star
-Safety Ratings API](https://one.nhtsa.gov/webapi/Default.aspx?
-SafetyRatings/API/5). This requires no sign up / authentication on
-your part, and you are not required to study it. The exact calls that
-you need to use are provided in this document.
+The underlying API that is to be used here is the
+[NHTSA NCAP 5 StarSafety Ratings API](https://one.nhtsa.gov/webapi/Default.aspx?SafetyRatings/API/5).
+This requires no sign up / authentication on your part, and you are not required
+to study it. The exact calls that you need to use are provided in this document.
 
 ## Requisites
 
