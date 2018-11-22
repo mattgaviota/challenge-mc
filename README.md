@@ -31,7 +31,7 @@ Enter to the directory of the app
 
 To run the application in development, you need install the dependencies.
 
-    docker-compose exec -u 1000 composer install
+    docker-compose exec -u 1000 web composer install
 
 After installing this, you may need to configure some permissions. Directories
 within the  `storage` and the `bootstrap/cache` directories should be writable
@@ -78,3 +78,9 @@ Also there are automatized tests that you can run with **composer**
     cd challenge-m/apimc
   
     composer test
+
+Or if you are using **Docker Compose**
+
+    cd challenge-mc
+    
+    docker-compose exec -u 1000 web composer test
