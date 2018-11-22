@@ -19,6 +19,10 @@ followed in another system.
 It also assume you have [git](https://git-scm.com/) installed but it works
 exactly the same if you download the zip file with the code.
 
+After follow the steps described below, you can try de API using
+[Postman](https://www.getpostman.com/) and importing the
+*apimc.postman_collection.json* file.
+
 ## A) Install the Application Using docker
 
 Clone the repository(also works downloading the zip file)
