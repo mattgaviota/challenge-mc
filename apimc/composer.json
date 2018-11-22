@@ -49,6 +49,12 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
+        ],
+        "start": [
+            "php artisan serve --port=8080"
+        ],
+        "test": [
+            "phpunit"
         ]
     },
     "config": {
